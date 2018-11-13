@@ -13,6 +13,8 @@ repeat {
   result = content(GET(paste(template,query,sep='')))
 
   #write(toJSON(result), "result.json")
-
-  print(result[['items']][[6]][['title']])
+  
+  for (i in 1:length(result[['items']])) {
+    print(result[['items']][[i]][['title']])
+  }
 }
